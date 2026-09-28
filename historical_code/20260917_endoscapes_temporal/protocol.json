@@ -1,0 +1,24 @@
+{
+  "feature_model": "torchvision ResNet18 IMAGENET1K_V1; fc replaced by identity",
+  "development_split": "official train only",
+  "labels": [
+    "c1_majority",
+    "c2_majority",
+    "c3_majority"
+  ],
+  "test_sampling": "24 randomly selected train procedures; 20% of their eligible DS-labelled frames",
+  "conditions": {
+    "gap_0s": 0,
+    "gap_1s": 25,
+    "gap_5s": 125,
+    "gap_10s": 250,
+    "gap_30s": 750,
+    "gap_60s": 1500,
+    "procedure_disjoint": null
+  },
+  "fixed_training_size_within_repeat": true,
+  "same_test_frames_across_conditions": true,
+  "classifier": "StandardScaler + RidgeClassifier(alpha=1,class_weight=balanced)",
+  "base_seed": 20260916,
+  "repeats": 20
+}
